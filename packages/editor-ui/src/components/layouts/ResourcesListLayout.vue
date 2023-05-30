@@ -61,20 +61,6 @@
 			<page-view-layout-list :overflow="type !== 'list'" v-else>
 				<template #header>
 					<div class="mb-xs">
-						<n8n-callout
-							v-if="starsBannerShouldRender"
-							theme="secondary"
-							icon="star"
-							:class="$style['github-stars-banner']"
-						>
-							<span v-html="$locale.baseText('githubStars.banner.title')"></span>
-							<template #trailingContent>
-								<n8n-link :to="repoUrl" size="small" theme="secondary" bold underline>
-									{{ $locale.baseText('githubStars.banner.link') }}
-								</n8n-link>
-							</template>
-						</n8n-callout>
-
 						<div :class="$style['filters-row']">
 							<n8n-input
 								:class="[$style['search'], 'mr-2xs']"

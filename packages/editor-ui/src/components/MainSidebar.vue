@@ -19,7 +19,7 @@
 			<template #header>
 				<div :class="$style.logo">
 					<img
-						:src="basePath + (isCollapsed ? 'n8n-logo-collapsed.svg' : 'n8n-logo-expanded.svg')"
+						:src="basePath + (isCollapsed ? 'cohesive_webclip.png' : 'cohesive_logo.png')"
 						:class="$style.icon"
 						alt="n8n"
 					/>
@@ -538,6 +538,7 @@ export default defineComponent({
 		height: $header-height;
 		display: flex;
 		align-items: center;
+    justify-content: center;
 		padding: var(--spacing-xs);
 
 		img {

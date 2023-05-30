@@ -1,5 +1,5 @@
 <template>
-	<img :src="basePath + 'n8n-logo-expanded.svg'" :class="$style.img" alt="n8n.io" />
+	<img :src="basePath + 'cohesive_logo.png'" :class="$style.img" alt="n8n.io" />
 </template>
 
 <script lang="ts">
