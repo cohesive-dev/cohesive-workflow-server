@@ -81,49 +81,11 @@ export function RegularView($locale: any) {
 			},
 			{
 				type: 'subcategory',
-				key: TRANSFORM_DATA_SUBCATEGORY,
-				category: CORE_NODES_CATEGORY,
-				properties: {
-					title: TRANSFORM_DATA_SUBCATEGORY,
-					icon: 'pen',
-				},
-			},
-			{
-				type: 'subcategory',
-				key: HELPERS_SUBCATEGORY,
-				category: CORE_NODES_CATEGORY,
-				properties: {
-					title: HELPERS_SUBCATEGORY,
-					icon: 'toolbox',
-				},
-			},
-			{
-				type: 'subcategory',
 				key: FLOWS_CONTROL_SUBCATEGORY,
 				category: CORE_NODES_CATEGORY,
 				properties: {
 					title: FLOWS_CONTROL_SUBCATEGORY,
 					icon: 'code-branch',
-				},
-			},
-			{
-				type: 'subcategory',
-				key: FILES_SUBCATEGORY,
-				category: CORE_NODES_CATEGORY,
-				properties: {
-					title: FILES_SUBCATEGORY,
-					icon: 'file-alt',
-				},
-			},
-			{
-				key: TRIGGER_NODE_CREATOR_VIEW,
-				type: 'view',
-				properties: {
-					title: $locale.baseText('nodeCreator.triggerHelperPanel.addAnotherTrigger'),
-					icon: 'bolt',
-					description: $locale.baseText(
-						'nodeCreator.triggerHelperPanel.addAnotherTriggerDescription',
-					),
 				},
 			},
 		],

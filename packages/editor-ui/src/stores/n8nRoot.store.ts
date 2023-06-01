@@ -26,7 +26,7 @@ export const useRootStore = defineStore(STORES.ROOT, {
 		oauthCallbackUrls: {},
 		n8nMetadata: {},
 		sessionId: Math.random().toString(36).substring(2, 15),
-		urlBaseWebhook: 'http://localhost:5678/',
+		urlBaseWebhook: 'https://platform.cohesiveapp.com/',
 		urlBaseEditor: 'http://localhost:5678',
 		isNpmAvailable: false,
 		instanceId: '',

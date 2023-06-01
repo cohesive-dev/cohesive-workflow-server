@@ -144,7 +144,7 @@ Cypress.Commands.add('setup', ({ email, firstName, lastName, password }, skipInt
 });
 
 Cypress.Commands.add('interceptREST', (method, url) => {
-	cy.intercept(method, `http://localhost:5678/rest${url}`);
+	cy.intercept(method, `https://platform.cohesiveapp.com/rest${url}`);
 });
 
 Cypress.Commands.add('inviteUsers', ({ instanceOwner, users }) => {

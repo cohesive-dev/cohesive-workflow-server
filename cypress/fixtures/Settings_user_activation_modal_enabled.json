@@ -9,12 +9,12 @@
 			"maxExecutionTimeout": 3600,
 			"workflowCallerPolicyDefaultOption": "workflowsFromSameOwner",
 			"timezone": "America/New_York",
-			"urlBaseWebhook": "http://localhost:5678/",
-			"urlBaseEditor": "http://localhost:5678",
+			"urlBaseWebhook": "https://platform.cohesiveapp.com/",
+			"urlBaseEditor": "https://platform.cohesiveapp.com/",
 			"versionCli": "0.221.2",
 			"oauthCallbackUrls": {
-				"oauth1": "http://localhost:5678/rest/oauth1-credential/callback",
-				"oauth2": "http://localhost:5678/rest/oauth2-credential/callback"
+				"oauth1": "https://platform.cohesiveapp.com/rest/oauth1-credential/callback",
+				"oauth2": "https://platform.cohesiveapp.com/rest/oauth2-credential/callback"
 			},
 			"versionNotifications": {
 				"enabled": true,
