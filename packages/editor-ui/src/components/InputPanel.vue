@@ -100,13 +100,6 @@
 				}}</n8n-text>
 				<n8n-text tag="div">
 					{{ $locale.baseText('ndv.input.notConnected.message') }}
-					<a
-						href="https://docs.n8n.io/workflows/connections/"
-						target="_blank"
-						@click="onConnectionHelpClick"
-					>
-						{{ $locale.baseText('ndv.input.notConnected.learnMore') }}
-					</a>
 				</n8n-text>
 			</div>
 		</template>

@@ -37,7 +37,7 @@ const completeOperations: INodeProperties[] = [
 		name: 'model',
 		type: 'options',
 		description:
-			'The model which will generate the completion. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>.',
+			'The model which will generate the completion.',
 		displayOptions: {
 			show: {
 				operation: ['complete'],

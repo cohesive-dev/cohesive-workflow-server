@@ -10,7 +10,6 @@ exports[`components > N8nCallout > should render additional slots correctly 1`] 
       <n8n-text-stub size=\\"small\\" tag=\\"span\\">This is a secondary callout.</n8n-text-stub>
     </n8n-text-stub> &nbsp; <n8n-link-stub size=\\"small\\">Do something!</n8n-link-stub>
   </div>
-  <n8n-link-stub theme=\\"secondary\\" size=\\"small\\" bold=\\"true\\" underline=\\"true\\" to=\\"https://n8n.io\\">Learn more</n8n-link-stub>
 </div>"
 `;
 

@@ -94,15 +94,4 @@ secondaryCallout.args = {
 			Unpin
 		</n8n-link>
 	`,
-	trailingContent: `
-		<n8n-link
-			theme="secondary"
-			size="small"
-			:bold="true"
-			:underline="true"
-			to="https://n8n.io"
-		>
-			Learn more
-		</n8n-link>
-	`,
 };

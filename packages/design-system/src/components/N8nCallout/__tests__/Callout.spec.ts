@@ -86,8 +86,6 @@ describe('components', () => {
 				slots: {
 					default: '<n8n-text size="small">This is a secondary callout.</n8n-text>',
 					actions: '<n8n-link size="small">Do something!</n8n-link>',
-					trailingContent:
-						'<n8n-link theme="secondary" size="small" :bold="true" :underline="true" to="https://n8n.io">Learn more</n8n-link>',
 				},
 			});
 			expect(wrapper.html()).toMatchSnapshot();
