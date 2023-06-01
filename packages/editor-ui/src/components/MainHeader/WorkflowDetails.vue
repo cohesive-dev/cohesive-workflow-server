@@ -56,7 +56,7 @@
 		</span>
 		<span v-else class="tags"></span>
 
-		<PushConnectionTracker class="actions">
+		<!-- <PushConnectionTracker class="actions">
 			<template>
 				<span class="activator">
 					<WorkflowActivator :workflow-active="isWorkflowActive" :workflow-id="currentWorkflowId" />
@@ -118,7 +118,7 @@
 					/>
 				</div>
 			</template>
-		</PushConnectionTracker>
+		</PushConnectionTracker> -->
 	</div>
 </template>
 

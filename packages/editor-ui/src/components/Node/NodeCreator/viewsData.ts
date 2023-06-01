@@ -62,43 +62,6 @@ export function TriggerView($locale: any) {
 					},
 				},
 			},
-			{
-				key: MANUAL_TRIGGER_NODE_TYPE,
-				type: 'node',
-				category: [CORE_NODES_CATEGORY],
-				properties: {
-					group: [],
-					name: MANUAL_TRIGGER_NODE_TYPE,
-					displayName: $locale.baseText('nodeCreator.triggerHelperPanel.manualTriggerDisplayName'),
-					description: $locale.baseText('nodeCreator.triggerHelperPanel.manualTriggerDescription'),
-					icon: 'fa:mouse-pointer',
-				},
-			},
-			{
-				key: EXECUTE_WORKFLOW_TRIGGER_NODE_TYPE,
-				type: 'node',
-				category: [CORE_NODES_CATEGORY],
-				properties: {
-					group: [],
-					name: EXECUTE_WORKFLOW_TRIGGER_NODE_TYPE,
-					displayName: $locale.baseText(
-						'nodeCreator.triggerHelperPanel.workflowTriggerDisplayName',
-					),
-					description: $locale.baseText(
-						'nodeCreator.triggerHelperPanel.workflowTriggerDescription',
-					),
-					icon: 'fa:sign-out-alt',
-				},
-			},
-			{
-				type: 'subcategory',
-				key: OTHER_TRIGGER_NODES_SUBCATEGORY,
-				category: CORE_NODES_CATEGORY,
-				properties: {
-					title: OTHER_TRIGGER_NODES_SUBCATEGORY,
-					icon: 'folder-open',
-				},
-			},
 		],
 	};
 }

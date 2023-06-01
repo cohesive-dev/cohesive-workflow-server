@@ -82,13 +82,6 @@ export default defineComponent({
 					value: 'params',
 				},
 			];
-			if (this.documentationUrl) {
-				options.push({
-					label: this.$locale.baseText('nodeSettings.docs'),
-					value: 'docs',
-					href: this.documentationUrl,
-				});
-			}
 			if (this.isCommunityNode) {
 				options.push({
 					icon: 'cube',

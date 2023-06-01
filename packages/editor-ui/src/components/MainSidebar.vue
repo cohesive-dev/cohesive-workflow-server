@@ -222,7 +222,7 @@ export default defineComponent({
 					label: this.$locale.baseText('settings'),
 					position: 'bottom',
 					available: this.canUserAccessSettings && this.usersStore.currentUser !== null,
-					activateOnRouteNames: [VIEWS.USERS_SETTINGS, VIEWS.API_SETTINGS, VIEWS.PERSONAL_SETTINGS],
+					activateOnRouteNames: [VIEWS.PERSONAL_SETTINGS, VIEWS.USERS_SETTINGS],
 				},
 			];
 			return [...items, ...regularItems];

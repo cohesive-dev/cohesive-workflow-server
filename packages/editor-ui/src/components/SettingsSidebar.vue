@@ -21,16 +21,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { mapStores } from 'pinia';
+import type { IFakeDoor } from '@/Interface';
 import { ABOUT_MODAL_KEY, VERSIONS_MODAL_KEY, VIEWS } from '@/constants';
 import { userHelpers } from '@/mixins/userHelpers';
-import type { IFakeDoor } from '@/Interface';
-import type { IMenuItem } from 'n8n-design-system';
-import type { BaseTextKey } from '@/plugins/i18n';
-import { useUIStore } from '@/stores/ui.store';
-import { useSettingsStore } from '@/stores/settings.store';
 import { useRootStore } from '@/stores/n8nRoot.store';
+import { useSettingsStore } from '@/stores/settings.store';
+import { useUIStore } from '@/stores/ui.store';
+import type { IMenuItem } from 'n8n-design-system';
+import { mapStores } from 'pinia';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'SettingsSidebar',
@@ -59,37 +58,6 @@ export default defineComponent({
 					activateOnRouteNames: [VIEWS.USERS_SETTINGS],
 				},
 			];
-
-			for (const item of this.settingsFakeDoorFeatures) {
-				if (item.uiLocations.includes('settings')) {
-					menuItems.push({
-						id: item.id,
-						icon: item.icon || 'question',
-						label: this.$locale.baseText(item.featureName as BaseTextKey),
-						position: 'top',
-						available: true,
-						activateOnRoutePaths: [`/settings/coming-soon/${item.id}`],
-					});
-				}
-			}
-
-			menuItems.push({
-				id: 'settings-log-streaming',
-				icon: 'sign-in-alt',
-				label: this.$locale.baseText('settings.log-streaming'),
-				position: 'top',
-				available: this.canAccessLogStreamingSettings(),
-				activateOnRouteNames: [VIEWS.LOG_STREAMING_SETTINGS],
-			});
-
-			menuItems.push({
-				id: 'settings-community-nodes',
-				icon: 'cube',
-				label: this.$locale.baseText('settings.communityNodes'),
-				position: 'top',
-				available: this.canAccessCommunityNodes(),
-				activateOnRouteNames: [VIEWS.COMMUNITY_NODES],
-			});
 
 			return menuItems;
 		},
