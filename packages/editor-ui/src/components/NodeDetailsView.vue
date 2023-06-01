@@ -109,15 +109,6 @@
 						@stopExecution="onStopExecution"
 						@activate="onWorkflowActivate"
 					/>
-					<a
-						v-if="featureRequestUrl"
-						@click="onFeatureRequestClick"
-						:class="$style.featureRequest"
-						target="_blank"
-					>
-						<font-awesome-icon icon="lightbulb" />
-						{{ $locale.baseText('ndv.featureRequest') }}
-					</a>
 				</template>
 			</NDVDraggablePanels>
 		</div>

@@ -156,7 +156,7 @@ jobs:
         with:
           install: false
           start: pnpm start
-          wait-on: 'http://localhost:5678'
+          wait-on: 'https://platform.cohesiveapp.com'
           wait-on-timeout: 120
           record: ${{ inputs.record }}
           parallel: ${{ fromJSON( inputs.spec == 'e2e/*' && inputs.parallel || false ) }}

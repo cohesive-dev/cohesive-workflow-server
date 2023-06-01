@@ -91,6 +91,7 @@ import {
 	faPlus,
 	faPlusCircle,
 	faPlusSquare,
+  faProjectDiagram,
 	faQuestion,
 	faQuestionCircle,
 	faRedo,
@@ -130,6 +131,7 @@ import {
 	faStickyNote as faSolidStickyNote,
 	faUserLock,
 	faGem,
+  faLock,
 } from '@fortawesome/free-solid-svg-icons';
 import { faVariable } from './custom';
 import { faStickyNote } from '@fortawesome/free-regular-svg-icons';
@@ -214,6 +216,7 @@ addIcon(faKey);
 addIcon(faLink);
 addIcon(faList);
 addIcon(faLightbulb);
+addIcon(faLock);
 addIcon(faMapSigns);
 addIcon(faMousePointer);
 addIcon(faNetworkWired);
@@ -227,6 +230,7 @@ addIcon(faPlug);
 addIcon(faPlus);
 addIcon(faPlusCircle);
 addIcon(faPlusSquare);
+addIcon(faProjectDiagram);
 addIcon(faQuestion);
 addIcon(faQuestionCircle);
 addIcon(faRedo);

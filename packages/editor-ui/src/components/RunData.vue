@@ -18,18 +18,6 @@
 					{{ $locale.baseText('runData.pindata.unpin') }}
 				</n8n-link>
 			</span>
-			<template #trailingContent>
-				<n8n-link
-					:to="dataPinningDocsUrl"
-					size="small"
-					theme="secondary"
-					bold
-					underline
-					@click="onClickDataPinningDocsLink"
-				>
-					{{ $locale.baseText('runData.pindata.learnMore') }}
-				</n8n-link>
-			</template>
 		</n8n-callout>
 
 		<BinaryDataDisplay
@@ -195,14 +183,6 @@
 						language="json"
 						@valueChanged="ndvStore.setOutputPanelEditModeValue($event)"
 					/>
-				</div>
-				<div :class="$style.editModeFooter">
-					<n8n-info-tip :bold="false" :class="$style.editModeFooterInfotip">
-						{{ $locale.baseText('runData.editor.copyDataInfo') }}
-						<n8n-link :to="dataEditingDocsUrl" size="small">
-							{{ $locale.baseText('generic.learnMore') }}
-						</n8n-link>
-					</n8n-info-tip>
 				</div>
 			</div>
 

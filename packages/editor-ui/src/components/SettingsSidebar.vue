@@ -21,16 +21,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { mapStores } from 'pinia';
+import type { IFakeDoor } from '@/Interface';
 import { ABOUT_MODAL_KEY, VERSIONS_MODAL_KEY, VIEWS } from '@/constants';
 import { userHelpers } from '@/mixins/userHelpers';
-import type { IFakeDoor } from '@/Interface';
-import type { IMenuItem } from 'n8n-design-system';
-import type { BaseTextKey } from '@/plugins/i18n';
-import { useUIStore } from '@/stores/ui.store';
-import { useSettingsStore } from '@/stores/settings.store';
 import { useRootStore } from '@/stores/n8nRoot.store';
+import { useSettingsStore } from '@/stores/settings.store';
+import { useUIStore } from '@/stores/ui.store';
+import type { IMenuItem } from 'n8n-design-system';
+import { mapStores } from 'pinia';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'SettingsSidebar',
@@ -42,14 +41,6 @@ export default defineComponent({
 		},
 		sidebarMenuItems(): IMenuItem[] {
 			const menuItems: IMenuItem[] = [
-				{
-					id: 'settings-usage-and-plan',
-					icon: 'chart-bar',
-					label: this.$locale.baseText('settings.usageAndPlan.title'),
-					position: 'top',
-					available: this.canAccessUsageAndPlan(),
-					activateOnRouteNames: [VIEWS.USAGE],
-				},
 				{
 					id: 'settings-personal',
 					icon: 'user-circle',
@@ -66,70 +57,7 @@ export default defineComponent({
 					available: this.canAccessUsersSettings(),
 					activateOnRouteNames: [VIEWS.USERS_SETTINGS],
 				},
-				{
-					id: 'settings-api',
-					icon: 'plug',
-					label: this.$locale.baseText('settings.n8napi'),
-					position: 'top',
-					available: this.canAccessApiSettings(),
-					activateOnRouteNames: [VIEWS.API_SETTINGS],
-				},
-				{
-					id: 'settings-version-control',
-					icon: 'code-branch',
-					label: this.$locale.baseText('settings.versionControl.title'),
-					position: 'top',
-					available: this.canAccessVersionControl(),
-					activateOnRouteNames: [VIEWS.VERSION_CONTROL],
-				},
-				{
-					id: 'settings-sso',
-					icon: 'user-lock',
-					label: this.$locale.baseText('settings.sso'),
-					position: 'top',
-					available: this.canAccessSso(),
-					activateOnRouteNames: [VIEWS.SSO_SETTINGS],
-				},
-				{
-					id: 'settings-ldap',
-					icon: 'network-wired',
-					label: this.$locale.baseText('settings.ldap'),
-					position: 'top',
-					available: this.canAccessLdapSettings(),
-					activateOnRouteNames: [VIEWS.LDAP_SETTINGS],
-				},
 			];
-
-			for (const item of this.settingsFakeDoorFeatures) {
-				if (item.uiLocations.includes('settings')) {
-					menuItems.push({
-						id: item.id,
-						icon: item.icon || 'question',
-						label: this.$locale.baseText(item.featureName as BaseTextKey),
-						position: 'top',
-						available: true,
-						activateOnRoutePaths: [`/settings/coming-soon/${item.id}`],
-					});
-				}
-			}
-
-			menuItems.push({
-				id: 'settings-log-streaming',
-				icon: 'sign-in-alt',
-				label: this.$locale.baseText('settings.log-streaming'),
-				position: 'top',
-				available: this.canAccessLogStreamingSettings(),
-				activateOnRouteNames: [VIEWS.LOG_STREAMING_SETTINGS],
-			});
-
-			menuItems.push({
-				id: 'settings-community-nodes',
-				icon: 'cube',
-				label: this.$locale.baseText('settings.communityNodes'),
-				position: 'top',
-				available: this.canAccessCommunityNodes(),
-				activateOnRouteNames: [VIEWS.COMMUNITY_NODES],
-			});
 
 			return menuItems;
 		},

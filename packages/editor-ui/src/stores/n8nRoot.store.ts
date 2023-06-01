@@ -7,6 +7,8 @@ import { useNodeTypesStore } from './nodeTypes.store';
 
 const { VUE_APP_URL_BASE_API } = import.meta.env;
 
+console.log('VUE_APP_URL_BASE_API', VUE_APP_URL_BASE_API);
+
 export const useRootStore = defineStore(STORES.ROOT, {
 	state: (): RootState => ({
 		baseUrl:
@@ -26,8 +28,8 @@ export const useRootStore = defineStore(STORES.ROOT, {
 		oauthCallbackUrls: {},
 		n8nMetadata: {},
 		sessionId: Math.random().toString(36).substring(2, 15),
-		urlBaseWebhook: 'http://localhost:5678/',
-		urlBaseEditor: 'http://localhost:5678',
+		urlBaseWebhook: 'https://platform.cohesiveapp.com/',
+		urlBaseEditor: 'https://platform.cohesiveapp.com',
 		isNpmAvailable: false,
 		instanceId: '',
 	}),
@@ -75,12 +77,14 @@ export const useRootStore = defineStore(STORES.ROOT, {
 	},
 	actions: {
 		setUrlBaseWebhook(urlBaseWebhook: string): void {
-			const url = urlBaseWebhook.endsWith('/') ? urlBaseWebhook : `${urlBaseWebhook}/`;
-			Vue.set(this, 'urlBaseWebhook', url);
+      // Comment this out to avoid platform.cohesiveapp.com URL being reset to localhost:5678
+			// const url = urlBaseWebhook.endsWith('/') ? urlBaseWebhook : `${urlBaseWebhook}/`;
+			// Vue.set(this, 'urlBaseWebhook', url);
 		},
 		setUrlBaseEditor(urlBaseEditor: string): void {
-			const url = urlBaseEditor.endsWith('/') ? urlBaseEditor : `${urlBaseEditor}/`;
-			Vue.set(this, 'urlBaseEditor', url);
+            // Comment this out to avoid platform.cohesiveapp.com URL being reset to localhost:5678
+			// const url = urlBaseEditor.endsWith('/') ? urlBaseEditor : `${urlBaseEditor}/`;
+			// Vue.set(this, 'urlBaseEditor', url);
 		},
 		setEndpointWebhook(endpointWebhook: string): void {
 			Vue.set(this, 'endpointWebhook', endpointWebhook);

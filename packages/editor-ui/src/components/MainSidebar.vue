@@ -31,41 +31,6 @@
 					:cloud-plan-data="currentPlanAndUsageData"
 					v-if="!isCollapsed && userIsTrialing"
 			/></template>
-			<template #menuSuffix>
-				<div v-if="hasVersionUpdates || versionControlStore.state.currentBranch">
-					<div v-if="hasVersionUpdates" :class="$style.updates" @click="openUpdatesPanel">
-						<div :class="$style.giftContainer">
-							<GiftNotificationIcon />
-						</div>
-						<n8n-text
-							:class="{ ['ml-xs']: true, [$style.expanded]: fullyExpanded }"
-							color="text-base"
-						>
-							{{ nextVersions.length > 99 ? '99+' : nextVersions.length }} update{{
-								nextVersions.length > 1 ? 's' : ''
-							}}
-						</n8n-text>
-					</div>
-					<div :class="$style.sync" v-if="versionControlStore.state.currentBranch">
-						<span>
-							<n8n-icon icon="code-branch" class="mr-xs" />
-							{{ currentBranch }}
-						</span>
-						<n8n-button
-							:title="
-								$locale.baseText('settings.versionControl.sync.prompt.title', {
-									interpolate: { branch: currentBranch },
-								})
-							"
-							icon="sync"
-							type="tertiary"
-							:size="isCollapsed ? 'mini' : 'small'"
-							square
-							@click="sync"
-						/>
-					</div>
-				</div>
-			</template>
 			<template #footer v-if="showUserArea">
 				<div :class="$style.userArea">
 					<div class="ml-3xs" data-test-id="main-sidebar-user-menu">
@@ -231,38 +196,22 @@ export default defineComponent({
 			const regularItems: IMenuItem[] = [
 				{
 					id: 'workflows',
-					icon: 'network-wired',
+					icon: 'project-diagram',
 					label: this.$locale.baseText('mainSidebar.workflows'),
 					position: 'top',
 					activateOnRouteNames: [VIEWS.WORKFLOWS],
 				},
 				{
-					id: 'templates',
-					icon: 'box-open',
-					label: this.$locale.baseText('mainSidebar.templates'),
-					position: 'top',
-					available: this.settingsStore.isTemplatesEnabled,
-					activateOnRouteNames: [VIEWS.TEMPLATES],
-				},
-				{
 					id: 'credentials',
-					icon: 'key',
+					icon: 'lock',
 					label: this.$locale.baseText('mainSidebar.credentials'),
 					customIconSize: 'medium',
 					position: 'top',
 					activateOnRouteNames: [VIEWS.CREDENTIALS],
 				},
 				{
-					id: 'variables',
-					icon: 'variable',
-					label: this.$locale.baseText('mainSidebar.variables'),
-					customIconSize: 'medium',
-					position: 'top',
-					activateOnRouteNames: [VIEWS.VARIABLES],
-				},
-				{
 					id: 'executions',
-					icon: 'tasks',
+					icon: 'clock',
 					label: this.$locale.baseText('mainSidebar.executions'),
 					position: 'top',
 					activateOnRouteNames: [VIEWS.EXECUTIONS],
@@ -273,61 +222,7 @@ export default defineComponent({
 					label: this.$locale.baseText('settings'),
 					position: 'bottom',
 					available: this.canUserAccessSettings && this.usersStore.currentUser !== null,
-					activateOnRouteNames: [VIEWS.USERS_SETTINGS, VIEWS.API_SETTINGS, VIEWS.PERSONAL_SETTINGS],
-				},
-				{
-					id: 'help',
-					icon: 'question',
-					label: 'Help',
-					position: 'bottom',
-					children: [
-						{
-							id: 'quickstart',
-							icon: 'video',
-							label: this.$locale.baseText('mainSidebar.helpMenuItems.quickstart'),
-							type: 'link',
-							properties: {
-								href: 'https://www.youtube.com/watch?v=1MwSoB0gnM4',
-								newWindow: true,
-							},
-						},
-						{
-							id: 'docs',
-							icon: 'book',
-							label: this.$locale.baseText('mainSidebar.helpMenuItems.documentation'),
-							type: 'link',
-							properties: {
-								href: 'https://docs.n8n.io',
-								newWindow: true,
-							},
-						},
-						{
-							id: 'forum',
-							icon: 'users',
-							label: this.$locale.baseText('mainSidebar.helpMenuItems.forum'),
-							type: 'link',
-							properties: {
-								href: 'https://community.n8n.io',
-								newWindow: true,
-							},
-						},
-						{
-							id: 'examples',
-							icon: 'graduation-cap',
-							label: this.$locale.baseText('mainSidebar.helpMenuItems.course'),
-							type: 'link',
-							properties: {
-								href: 'https://www.youtube.com/watch?v=1MwSoB0gnM4',
-								newWindow: true,
-							},
-						},
-						{
-							id: 'about',
-							icon: 'info',
-							label: this.$locale.baseText('mainSidebar.aboutN8n'),
-							position: 'bottom',
-						},
-					],
+					activateOnRouteNames: [VIEWS.PERSONAL_SETTINGS, VIEWS.USERS_SETTINGS],
 				},
 			];
 			return [...items, ...regularItems];

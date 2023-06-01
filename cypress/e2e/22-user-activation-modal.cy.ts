@@ -6,7 +6,7 @@ const workflowPage = new WorkflowPage();
 const ndv = new NDV();
 const userActivationSurveyModal = new UserActivationSurveyModal();
 
-const BASE_WEBHOOK_URL = 'http://localhost:5678/webhook';
+const BASE_WEBHOOK_URL = 'https://platform.cohesiveapp.com/webhook';
 
 describe('User activation survey', () => {
 	before(() => {

@@ -342,7 +342,7 @@ export default defineComponent({
 		};
 	},
 	mounted() {
-		setPageTitle(`n8n - ${this.pageTitle}`);
+		setPageTitle(`Cohesive - ${this.pageTitle}`);
 		document.addEventListener('visibilitychange', this.onDocumentVisibilityChange);
 	},
 	async created() {
