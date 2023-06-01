@@ -378,7 +378,7 @@ export default defineComponent({
 		next();
 	},
 	async mounted() {
-		setPageTitle('n8n - Templates');
+		setPageTitle('Cohesive - Templates');
 		void this.loadCategories();
 		void this.loadWorkflowsAndCollections(true);
 		void this.usersStore.showPersonalizationSurvey();

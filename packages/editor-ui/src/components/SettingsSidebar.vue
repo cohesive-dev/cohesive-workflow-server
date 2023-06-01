@@ -43,14 +43,6 @@ export default defineComponent({
 		sidebarMenuItems(): IMenuItem[] {
 			const menuItems: IMenuItem[] = [
 				{
-					id: 'settings-usage-and-plan',
-					icon: 'chart-bar',
-					label: this.$locale.baseText('settings.usageAndPlan.title'),
-					position: 'top',
-					available: this.canAccessUsageAndPlan(),
-					activateOnRouteNames: [VIEWS.USAGE],
-				},
-				{
 					id: 'settings-personal',
 					icon: 'user-circle',
 					label: this.$locale.baseText('settings.personal'),
@@ -65,38 +57,6 @@ export default defineComponent({
 					position: 'top',
 					available: this.canAccessUsersSettings(),
 					activateOnRouteNames: [VIEWS.USERS_SETTINGS],
-				},
-				{
-					id: 'settings-api',
-					icon: 'plug',
-					label: this.$locale.baseText('settings.n8napi'),
-					position: 'top',
-					available: this.canAccessApiSettings(),
-					activateOnRouteNames: [VIEWS.API_SETTINGS],
-				},
-				{
-					id: 'settings-version-control',
-					icon: 'code-branch',
-					label: this.$locale.baseText('settings.versionControl.title'),
-					position: 'top',
-					available: this.canAccessVersionControl(),
-					activateOnRouteNames: [VIEWS.VERSION_CONTROL],
-				},
-				{
-					id: 'settings-sso',
-					icon: 'user-lock',
-					label: this.$locale.baseText('settings.sso'),
-					position: 'top',
-					available: this.canAccessSso(),
-					activateOnRouteNames: [VIEWS.SSO_SETTINGS],
-				},
-				{
-					id: 'settings-ldap',
-					icon: 'network-wired',
-					label: this.$locale.baseText('settings.ldap'),
-					position: 'top',
-					available: this.canAccessLdapSettings(),
-					activateOnRouteNames: [VIEWS.LDAP_SETTINGS],
 				},
 			];
 
