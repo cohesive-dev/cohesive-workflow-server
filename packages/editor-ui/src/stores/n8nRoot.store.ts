@@ -5,7 +5,9 @@ import { defineStore } from 'pinia';
 import Vue from 'vue';
 import { useNodeTypesStore } from './nodeTypes.store';
 
-const { VUE_APP_URL_BASE_API } = import.meta.env;
+// const { VUE_APP_URL_BASE_API } = import.meta.env;
+
+const VUE_APP_URL_BASE_API = 'http://localhost:5678/';
 
 console.log('VUE_APP_URL_BASE_API', VUE_APP_URL_BASE_API);
 
