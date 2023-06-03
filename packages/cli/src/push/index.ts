@@ -83,21 +83,21 @@ export const setupPushHandler = (
 		}
 
 		// Handle authentication
-		if (isUserManagementEnabled) {
-			try {
-				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-				const authCookie: string = req.cookies?.[AUTH_COOKIE_NAME] ?? '';
-				await resolveJwt(authCookie);
-			} catch (error) {
-				if (ws) {
-					ws.send(`Unauthorized: ${(error as Error).message}`);
-					ws.close(401);
-				} else {
-					res.status(401).send('Unauthorized');
-				}
-				return;
-			}
-		}
+		// if (isUserManagementEnabled) {
+		// 	try {
+		// 		// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+		// 		const authCookie: string = req.cookies?.[AUTH_COOKIE_NAME] ?? '';
+		// 		await resolveJwt(authCookie);
+		// 	} catch (error) {
+		// 		if (ws) {
+		// 			ws.send(`Unauthorized: ${(error as Error).message}`);
+		// 			ws.close(401);
+		// 		} else {
+		// 			res.status(401).send('Unauthorized');
+		// 		}
+		// 		return;
+		// 	}
+		// }
 
 		next();
 	};
