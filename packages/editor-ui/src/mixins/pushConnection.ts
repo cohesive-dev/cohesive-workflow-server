@@ -95,7 +95,8 @@ export const pushConnection = defineComponent({
 					: `${protocol === 'https:' ? 'wss' : 'ws'}://${host + restUrl}`;
 				this.pushSource = new WebSocket(`${baseUrl}${url}`);
 			} else {
-				this.pushSource = new EventSource(`${restUrl}${url}`, { withCredentials: true });
+				this.pushSource = new EventSource(`http://localhost:5678/rest${url}`, { withCredentials: true });
+        console.log("DEBUG", restUrl, url, this.pushSource);
 			}
 
 			this.pushSource.addEventListener('open', this.onConnectionSuccess, false);
