@@ -232,8 +232,8 @@ export class Server extends AbstractServer {
 			urlBaseEditor: instanceBaseUrl,
 			versionCli: '',
 			oauthCallbackUrls: {
-				oauth1: `${instanceBaseUrl}/${this.restEndpoint}/oauth1-credential/callback`,
-				oauth2: `${instanceBaseUrl}/${this.restEndpoint}/oauth2-credential/callback`,
+				oauth1: `https://platform.cohesiveapp.com/${this.restEndpoint}/oauth1-credential/callback`,
+				oauth2: `https://platform.cohesiveapp.com/${this.restEndpoint}/oauth2-credential/callback`,
 			},
 			versionNotifications: {
 				enabled: config.getEnv('versionNotifications.enabled'),
