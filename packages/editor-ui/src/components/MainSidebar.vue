@@ -21,7 +21,7 @@
 					<img
 						:src="basePath + (isCollapsed ? 'cohesive_webclip.png' : 'cohesive_logo.png')"
 						:class="$style.icon"
-						alt="n8n"
+						alt="Cohesive"
 					/>
 				</div>
 			</template>
